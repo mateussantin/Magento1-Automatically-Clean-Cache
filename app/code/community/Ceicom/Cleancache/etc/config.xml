@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+<modules>
+    <Ceicom_Cleancache>
+        <version>1.0.0</version>
+    </Ceicom_Cleancache>
+</modules>
+    <global>
+        <models>
+            <cleancache>
+                <class>Ceicom_Cleancache_Model</class>
+            </cleancache>
+        </models>
+    </global>
+    <crontab>
+        <jobs>
+            <ceicom_clean_cache>
+                <schedule>
+                    <cron_expr>0 0 * * *</cron_expr>
+                </schedule>
+                <run>
+                    <model>cleancache/cron_cron::cronCeicomCleanCache</model>
+                </run>
+            </ceicom_clean_cache>
+        </jobs>
+    </crontab>
+</config>
